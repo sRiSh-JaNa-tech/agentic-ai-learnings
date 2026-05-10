@@ -1,0 +1,27 @@
+[project]
+name = "lesson-codebase-navigator"
+version = "0.1.0"
+description = "Codebase Navigator — an augmented LLM with retrieval, tools, and memory"
+requires-python = ">=3.11"
+dependencies = [
+    "google-genai>=1.0.0",
+    "chromadb>=0.4.0",
+    "common",
+    "python-dotenv>=1.0.0",
+    "rich>=13.7.0",
+]
+
+[tool.uv]
+required-environments = [
+    "sys_platform == 'linux'",
+    "sys_platform == 'darwin' and platform_machine == 'arm64'",
+    "sys_platform == 'darwin' and platform_machine == 'x86_64'",
+    "sys_platform == 'win32'",
+]
+
+[tool.uv.sources]
+common = { path = "../../common", editable = true }
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
