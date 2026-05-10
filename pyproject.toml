@@ -1,0 +1,44 @@
+[project]
+name = "lesson-prompt-engineering"
+version = "0.1.0"
+description = "Lesson 2: Prompt engineering techniques (Anthropic, OpenAI, Gemini)"
+requires-python = ">=3.11"
+
+dependencies = [
+    # Anthropic API client
+    "anthropic>=0.76.0",
+
+    # OpenAI API client
+    "openai>=1.0.0",
+
+    # Google Gemini API client
+    "google-genai>=1.0.0",
+
+    # Schema validation / structured outputs
+    "pydantic>=2.0.0",
+
+    # Environment variable management
+    "python-dotenv>=1.0.0",
+
+    # Beautiful terminal output
+    "rich>=13.7.0",
+
+    # Logging utilities (optional but useful)
+    "loguru>=0.7.2",
+
+    # HTTP requests utilities
+    "httpx>=0.28.0",
+
+    # Retry support for API calls
+    "tenacity>=9.0.0",
+
+    # Local shared package
+    "common",
+]
+
+[tool.uv.sources]
+common = { path = "../common", editable = true }
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
